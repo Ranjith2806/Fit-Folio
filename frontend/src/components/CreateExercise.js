@@ -25,7 +25,7 @@ export default class CreateExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://exercisetrackerbackend.onrender.com/users')
+    axios.get('https://fit-folio.onrender.com/users')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -72,7 +72,7 @@ export default class CreateExercise extends Component {
 
     console.log(exercise);
 
-    axios.post('https://exercisetrackerbackend.onrender.com/exercises/add', exercise)
+    axios.post('https://fit-folio.onrender.com/exercises/add', exercise)
       .then(res => console.log(res.data));
       
     //to go back to the home page after submitting the form

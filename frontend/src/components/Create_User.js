@@ -28,7 +28,7 @@ export default class CreateUser extends Component {
 
     console.log(user);
 
-    axios.post('https://exercisetrackerbackend.onrender.com/users/add', user)
+    axios.post('https://fit-folio.onrender.com/users/add', user)
       .then(res => console.log(res.data));
 
     this.setState({

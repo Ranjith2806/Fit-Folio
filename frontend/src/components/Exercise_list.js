@@ -26,7 +26,7 @@ const ExercisesList = () => {
 
   useEffect(() => {
     axios
-      .get('https://exercisetrackerbackend.onrender.com/exercises/')
+      .get('https://fit-folio.onrender.com/exercises/')
       .then(response => {
         setExercises(response.data);
       })
@@ -36,7 +36,7 @@ const ExercisesList = () => {
   }, []);
 
   const deleteExercise = id => {
-    axios.delete(`https://exercisetrackerbackend.onrender.com/exercises/${id}`).then(res => {
+    axios.delete(`https://fit-folio.onrender.com/exercises/${id}`).then(res => {
       console.log(res.data);
       setExercises(prevExercises => prevExercises.filter(ex => ex._id !== id));
     });
