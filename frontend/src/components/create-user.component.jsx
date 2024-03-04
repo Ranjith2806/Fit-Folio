@@ -28,7 +28,7 @@ export default class CreateUser extends Component {
 
     console.log(user);
 
-    axios.post('https://fit-folio.onrender.com/users/add', user)
+    axios.post('https://fit-track-epab.onrender.com/users/add', user)
       .then(res => console.log(res.data));
 
     this.setState({
@@ -39,7 +39,7 @@ export default class CreateUser extends Component {
   render() {
     return (
       <div>
-        <h3 className="my-3">Create New User</h3>
+        {/* <h3 className="my-3">Create New User</h3> */}
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Username:</label>
@@ -51,7 +51,6 @@ export default class CreateUser extends Component {
               onChange={this.onChangeUsername}
             />
           </div>
-          <br/>
           <div className="form-group">
             <button type="submit" className="btn btn-primary">
               Create User

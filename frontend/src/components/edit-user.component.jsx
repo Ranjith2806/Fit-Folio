@@ -1,10 +1,7 @@
-//edit user
-
 import React, { Component } from 'react';
 import axios from 'axios';
-import {FaTrash} from 'react-icons/fa';
+import { FaTrash } from 'react-icons/fa';
 import Table from 'react-bootstrap/esm/Table';
-
 
 export default class UsersList extends Component {
   constructor(props) {
@@ -14,7 +11,7 @@ export default class UsersList extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://fit-folio.onrender.com/users/')
+    axios.get('https://fit-track-epab.onrender.com/users/')
       .then(response => {
         this.setState({ users: response.data });
       })
@@ -23,29 +20,13 @@ export default class UsersList extends Component {
       });
   }
 
-  // deleteUser(id) {
-  //   axios.delete('https://fit-folio.onrender.com/users/'+id)
-  //     .then(response => { console.log(response.data)});
-  //   this.setState({
-  //     users: this.state.users.filter(el => el._id !== id)
-  //   })
-  // }
-
   deleteUser(id) {
-    axios.delete('https://fit-folio.onrender.com/users/'+id)
-      .then(response => {
-        console.log(response.data);
-  
-        // Update the state after a successful deletion
-        this.setState({
-          users: this.state.users.filter(el => el._id !== id)
-        })
-      })
-      .catch(error => {
-        console.error("Error deleting user:", error);
-      })
+    axios.delete('https://fit-track-epab.onrender.com/users/'+id)
+      .then(response => { console.log(response.data)});
+    this.setState({
+      users: this.state.users.filter(el => el._id !== id)
+    })
   }
-
 
   render() {
     return (

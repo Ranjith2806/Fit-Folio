@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
-import { FaTrash } from 'react-icons/fa';
+import {FaTrash} from 'react-icons/fa';
+
 
 const Exercise = ({ exercise, deleteExercise }) => (
   <tr>
@@ -14,7 +15,7 @@ const Exercise = ({ exercise, deleteExercise }) => (
     <td>
       <Link onClick={() => deleteExercise(exercise._id)}>
       <Button variant="danger">
-        <FaTrash /> 
+        <FaTrash/>
       </Button>
       </Link>
     </td>
@@ -26,7 +27,7 @@ const ExercisesList = () => {
 
   useEffect(() => {
     axios
-      .get('https://fit-folio.onrender.com/exercises/')
+      .get('https://fit-track-epab.onrender.com/exercises/')
       .then(response => {
         setExercises(response.data);
       })
@@ -36,7 +37,7 @@ const ExercisesList = () => {
   }, []);
 
   const deleteExercise = id => {
-    axios.delete(`https://fit-folio.onrender.com/exercises/${id}`).then(res => {
+    axios.delete(`https://fit-track-epab.onrender.com/exercises/${id}`).then(res => {
       console.log(res.data);
       setExercises(prevExercises => prevExercises.filter(ex => ex._id !== id));
     });
@@ -68,7 +69,6 @@ const ExercisesList = () => {
       </Table>
     </div>
   );
-}
+};
 
 export default ExercisesList;
-

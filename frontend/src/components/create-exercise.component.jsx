@@ -3,8 +3,6 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
 
-
-
 export default class CreateExercise extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +23,7 @@ export default class CreateExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://fit-folio.onrender.com/users')
+    axios.get('https://fit-track-epab.onrender.com/users')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -62,22 +60,39 @@ export default class CreateExercise extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-
     const exercise = {
       username: this.state.username,
       description: this.state.description,
       duration: this.state.duration,
       date: this.state.date,
     };
-
+  
     console.log(exercise);
-
-    axios.post('https://fit-folio.onrender.com/exercises/add', exercise)
-      .then(res => console.log(res.data));
-      
-    //to go back to the home page after submitting the form
-    window.location = '/';
+  
+    axios.post('https://fit-track-epab.onrender.com/exercises/add', exercise)
+      .then(res => {
+        console.log(res.data);
+        this.setState({
+          username: '',
+          description: '',
+          duration: 0,
+          date: new Date(),
+        });
+      })
+      .catch(function(error){
+        console.log(error);
+      });
+  
+    axios.get('https://fit-track-epab.onrender.com/exercises/')
+      .then(response => {
+        this.setState({
+          exercises: response.data,
+        });
+      });
   }
+  
+  
+  
 
   render() {
     return (
@@ -133,7 +148,7 @@ export default class CreateExercise extends Component {
           <br/>
           <div className="form-group">
             <button type="submit" className="btn btn-primary">
-              Create Exercise.
+              Create Exercise Log
             </button>
           </div>
         </form>
