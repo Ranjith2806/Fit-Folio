@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
       <a  className="navbar-brand" href="/">
-        <FaDumbbell className="icon" /> Fit-Track
+        <FaDumbbell className="icon" /> Fit-Folio
       </a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span className="navbar-toggler-icon"></span>
