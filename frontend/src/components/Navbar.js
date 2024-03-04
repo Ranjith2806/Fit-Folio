@@ -12,22 +12,22 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <a exact className="nav-link" href="/">
+            <a exact className="nav-link" href="https://silver-fudge-d922a7.netlify.app/">
               <FaDumbbell className="icon" /> Exercises List
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/create">
+            <a className="nav-link" href="https://silver-fudge-d922a7.netlify.app/create">
               <RiAddCircleLine className="icon" /> Create Exercise Log
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/user">
+            <a className="nav-link" href="https://silver-fudge-d922a7.netlify.app/user">
               <RiUserAddLine className="icon" /> Create User
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/users">
+            <a className="nav-link" href="https://silver-fudge-d922a7.netlify.app/users">
               <RiUserLine className="icon" /> Users
             </a>
           </li>
