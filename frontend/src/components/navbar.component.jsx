@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { FaDumbbell } from 'react-icons/fa';
 import { RiAddCircleLine, RiUserAddLine, RiUserLine } from 'react-icons/ri';
 import './Navbar.css';
@@ -31,22 +31,13 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="https://enchanting-vacherin-0b9f11.netlify.app/users">
+            <a className="nav-link" href="/users">
               <RiUserLine className="icon" /> Users
             </a>
           </li>
         </ul>
       </div>
     </nav>
-    // <div className='navbar navbar-dark bg-dark navbar-expand-lg'>
-    //     <ul className='navbar-nav mr-auto'>
-    //       <Link to='https://enchanting-vacherin-0b9f11.netlify.app/' className='nav-link'> <FaDumbbell className="icon" /> Exercise-Tracker </Link>
-    //       <Link to='https://enchanting-vacherin-0b9f11.netlify.app/' className='nav-link'>  <FaDumbbell className="icon" /> Exercises List </Link>
-    //       <Link to='https://enchanting-vacherin-0b9f11.netlify.app/create' className='nav-link'> <RiAddCircleLine className="icon" /> Create Exercise Log </Link>
-    //       <Link to='https://enchanting-vacherin-0b9f11.netlify.app/user' className='nav-link'> <RiUserAddLine className="icon" /> Create User </Link>
-    //       <Link to='https://enchanting-vacherin-0b9f11.netlify.app/users' className='nav-link'>  <RiUserLine className="icon" /> Users </Link>
-    //     </ul>
-    // </div>
   );
 };
 
